@@ -1,5 +1,6 @@
-import Image from "next/image";
+"use client";
+import React from "react";
 
-export default function Home() {
-  return <div></div>;
+export default function Home({ children }: { children: React.ReactNode }) {
+  return children;
 }
