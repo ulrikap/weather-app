@@ -22,12 +22,13 @@
     "paths": {
       "@/*": ["./src/*"],
       "@ui/*": ["./src/app/ui/*"],
-      "@state/*": ["./src/app/state/*"],
+      "@application/*": ["./src/app/application/*"],
       "@domain/*": ["./src/app/domain/*"]
     }
   },
   "include": [
     "environment.d.ts",
+    "./domain/translation/TypeOverride.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
