@@ -21,9 +21,9 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@ui/*": ["./src/app/ui/*"],
-      "@application/*": ["./src/app/application/*"],
-      "@domain/*": ["./src/app/domain/*"]
+      "@ui/*": ["./src/ui/*"],
+      "@application/*": ["./src/application/*"],
+      "@domain/*": ["./src/domain/*"]
     }
   },
   "include": [
