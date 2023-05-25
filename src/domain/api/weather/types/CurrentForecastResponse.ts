@@ -17,6 +17,8 @@ export type MainData = {
   temp_max: number;
   pressure: number;
   humidity: number;
+  sea_level: number;
+  grnd_level: number;
 };
 
 export type Wind = {
