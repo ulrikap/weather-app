@@ -31,10 +31,14 @@ const Temperature = ({
     (state) => state
   ) as TGlobalState;
 
+  // Should use suspense here or architect a better application
+  if (!state) return null;
+
   return (
     <div className={`flex ${wrapperClasses}`}>
       <p className={`${textClasses}`}>
-        {convertFromKelvin(degree, state?.mode).toFixed(2)}°{modeToLetter(state?.mode)}
+        {convertFromKelvin(degree, state?.mode).toFixed(2)}°
+        {modeToLetter(state?.mode)}
       </p>
     </div>
   );
