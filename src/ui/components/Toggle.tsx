@@ -11,6 +11,7 @@ const opposites = {
 } as const;
 
 const Toggle = () => {
+  // me no likey
   const state = usePersistentStore(
     useGlobalStore,
     (state) => state

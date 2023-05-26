@@ -1,6 +1,6 @@
 import kelvinToCelcius, {
   INVALID_MODE_MESSAGE,
-  INVALID_NEGATIVE_INPUT_MESSAGE,
+  INVALID_INPUT_MESSAGE,
 } from "../kelvinToCelcius";
 
 describe("kelvinToCelcius", () => {
@@ -18,14 +18,18 @@ describe("kelvinToCelcius", () => {
     const input = -283;
     try {
       kelvinToCelcius(input, "celcius");
+      // Fail test if above expression doesn't throw anything.
+      expect(true).toBe(false);
     } catch (e) {
-      expect(e.message).toEqual(INVALID_NEGATIVE_INPUT_MESSAGE);
+      expect(e.message).toEqual(INVALID_INPUT_MESSAGE);
     }
   });
   test("Should not accept bad mode", () => {
     const input = 283;
     try {
       kelvinToCelcius(input, "silly mode");
+      // Fail test if above expression doesn't throw anything.
+      expect(true).toBe(false);
     } catch (e) {
       expect(e.message).toEqual(INVALID_MODE_MESSAGE);
     }

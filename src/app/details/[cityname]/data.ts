@@ -11,7 +11,6 @@ async function getData(cityname: string): Promise<DetailsShape> {
     return mapDataToShape(await response.json());
   } else {
     const res = await response.json();
-    console.log(res)
     throw Error(res?.message, { cause: res?.cod });
   }
 }
