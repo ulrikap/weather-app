@@ -11,7 +11,7 @@ const convertFromKelvin = (
       return (from - KELVIN_BASE) * 1.8 + 32;
     default:
       to satisfies never;
-      return -1000;
+      return 0;
   }
 };
 

@@ -2,9 +2,10 @@
 
 import { TemperatureUnit } from "@/domain/api/weather/types";
 import convertFromKelvin from "@/domain/api/weather/utils/kelvinToCelcius";
-import useGlobalStore from "@/domain/state/globalStore";
+import useGlobalStore, { TGlobalState } from "@/domain/state/globalStore";
+import usePersistentStore from "@/domain/state/useStore";
 
-const modeToLetter = (mode: (typeof TemperatureUnit)[number]) => {
+export const modeToLetter = (mode: (typeof TemperatureUnit)[number]) => {
   switch (mode) {
     case "celcius":
       return "C";
@@ -25,12 +26,15 @@ const Temperature = ({
   wrapperClasses?: string;
   textClasses?: string;
 }) => {
-  const { mode } = useGlobalStore();
+  const state = usePersistentStore(
+    useGlobalStore,
+    (state) => state
+  ) as TGlobalState;
 
   return (
     <div className={`flex ${wrapperClasses}`}>
       <p className={`${textClasses}`}>
-        {convertFromKelvin(degree, mode).toFixed(2)}°{modeToLetter(mode)}
+        {convertFromKelvin(degree, state?.mode).toFixed(2)}°{modeToLetter(state?.mode)}
       </p>
     </div>
   );

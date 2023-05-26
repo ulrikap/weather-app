@@ -1,25 +1,24 @@
-import type { LocationState } from "@/domain/state/locationStore";
 import Temperature from "@/ui/compositions/Temperature";
 import getData from "./data";
 import DashboardLink from "@/ui/components/DashboardLink";
-
-export type DashboardProps = {
-  locations: LocationState["locations"];
-};
+import Searchbar from "@/ui/components/Searchbar";
+import Toggle from "@/ui/components/Toggle";
 
 export default async function Dashboard() {
   const { locations } = await getData();
 
   return (
-    <main className="container grid mx-auto pt-10">
+    <main className="container flex flex-col mx-auto pt-10">
+      <Toggle />
+      <Searchbar />
       <ul className="grid lg:grid-cols-3 gap-10 m-2">
         {locations.map((item) => (
           <DashboardLink
             key={item.id}
-            to={`/details/${item.id}`}
+            to={`/details/${item.name}`}
             title={item.name}
           >
-            <Temperature degree={Number(item.base)} />
+            <Temperature degree={Number(item?.main?.temp)} />
           </DashboardLink>
         ))}
       </ul>
