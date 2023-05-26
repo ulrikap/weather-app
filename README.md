@@ -1,34 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Magnificent weather app
 
-## Getting Started
+Application to display the weather from different cities around the world
 
-First, run the development server:
+## Requirements
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Node 18 >=
+- pnpm 7 >=
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Synopsis
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The application is made with NextJS and Zustand as the main drivers. Datafetching is handled natively without any extra frameworks, except for the automatic caching provided by NextJS. Zustand handles global state (although very clunky when paired with NextJS).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## APIs
 
-## Learn More
+APIs used to display information in this application
 
-To learn more about Next.js, take a look at the following resources:
+### Unsplash
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Used to fetch a simple image of each location on the details screen
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Openweatherapi
 
-## Deploy on Vercel
+Displays all the weather information shown on the pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## How to run
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+From root
+* pnpm install
+* pnpm dev
+
+## Notes
+* Made as a recruitment challenge for Handelsbanken Digital Unit
+
+## Current Limitations
+* Does not account for city names written in other languages than english. The api can support this, but out of scope for now.
+* Does not test UI components with Cypress, only logic with Jest
+* Design is basic and is mainly driven by boxes and grids. Does however support mobile well.

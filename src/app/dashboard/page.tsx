@@ -12,7 +12,7 @@ export default async function Dashboard() {
       <Toggle />
       <Searchbar />
       <ul className="grid lg:grid-cols-3 gap-10 m-2">
-        {locations.map((item) => (
+        {locations?.map((item) => (
           <DashboardLink
             key={item.id}
             to={`/details/${item.name}`}
