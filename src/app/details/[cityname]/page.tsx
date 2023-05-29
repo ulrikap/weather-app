@@ -28,7 +28,7 @@ export default async function Details({
   const response = await getData(params?.cityname);
   const imageDetails = await fetchImageByQuery(params?.cityname);
 
-  const test = await imageDetails.json();
+  const image = await imageDetails.json();
 
   const detailItems = {
     sunrise: new Date(response.sunrise * 1000).toLocaleTimeString(),
@@ -73,7 +73,7 @@ export default async function Details({
               <KeyValueList items={detailItems} />
             </div>
           </div>
-          <img className="" src={test.results[0].urls.regular} />
+          <img className="" src={image.results[0].urls.regular} />
         </div>
       </main>
     </>

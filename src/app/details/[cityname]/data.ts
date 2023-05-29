@@ -16,16 +16,16 @@ async function getData(cityname: string): Promise<DetailsShape> {
 }
 
 const mapDataToShape = (arg: CurrentForecastResponse): DetailsShape => ({
-  currentTemp: arg?.main?.temp,
-  hiTemp: arg?.main?.temp_max,
-  loTemp: arg?.main?.temp_min,
-  humidity: arg?.main?.humidity,
-  sunrise: arg?.sys?.sunrise,
-  sunset: arg?.sys?.sunset,
-  title: arg?.name,
-  visibility: arg?.visibility,
-  weatherDetailText: arg?.weather[0].main,
-  imageUrl: arg?.weather[0]?.icon,
-  country: arg?.sys?.country,
+  currentTemp: arg?.main?.temp ?? "",
+  hiTemp: arg?.main?.temp_max ?? "",
+  loTemp: arg?.main?.temp_min ?? "",
+  humidity: arg?.main?.humidity ?? "",
+  sunrise: arg?.sys?.sunrise ?? "",
+  sunset: arg?.sys?.sunset ?? "",
+  title: arg?.name ?? "",
+  visibility: arg?.visibility ?? "",
+  weatherDetailText: arg?.weather[0].main ?? "",
+  imageUrl: arg?.weather[0]?.icon ?? "",
+  country: arg?.sys?.country ?? "",
 });
 export default getData;
