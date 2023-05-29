@@ -9,6 +9,15 @@ const nextConfig = {
   images: {
     domains: ["openweathermap.org"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/dashboard",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
