@@ -24,10 +24,14 @@ Used to fetch a simple image of each location on the details screen
 Displays all the weather information shown on the pages
 
 ## How to run
-
 From root
 * pnpm install
+
+### Development server
 * pnpm dev
+### Production build
+* pnpm build
+* pnpm start
 
 ## Notes
 * Made as a recruitment challenge for Handelsbanken Digital Unit
