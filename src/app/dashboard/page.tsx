@@ -9,7 +9,9 @@ export default async function Dashboard() {
 
   return (
     <main className="container flex flex-col mx-auto pt-10">
-      <Toggle />
+      <div className="container p-2">
+        <Toggle />
+      </div>
       <Searchbar />
       <ul className="grid lg:grid-cols-3 gap-10 m-2">
         {locations?.map((item) => (
